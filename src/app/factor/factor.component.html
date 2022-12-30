@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="flex-toolbar">
+  Factor Finder
+  <span class="spacer"></span>
+  <mat-icon>calculate</mat-icon>
+</mat-toolbar>
+
+<div class="body">
+  <form *ngIf="factorForm" [formGroup]="factorForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Input a value</mat-label>
+      <input matInput formControlName="value" type="number">
+    </mat-form-field>
+
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit">Find Factors</button>
+    </div>
+  </form>
+
+  <div class="factors" *ngIf="factors != null">
+    <h1>Factors of {{ formVal }}</h1>
+
+    <ul>
+      <li *ngFor="let factor of factorKeys">
+        <span class="number">{{ factor }}</span>
+        <span class="multiplier">x</span>
+        <span class="number">{{ factors[factor] }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

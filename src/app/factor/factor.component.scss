@@ -1,0 +1,38 @@
+.flex-toolbar {
+  display: flex;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+
+.body {
+  padding: 20px;
+
+  .factors {
+    margin-top: 50px;
+
+    ul {
+      list-style-type: none;
+      padding-left: 10px;
+
+      li {
+        display: flex;
+
+        span {
+          display: inline-block;
+          text-align: center;
+
+          &.number {
+            width: 40px;
+          }
+
+          &.multiplier {
+            width: 10px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
